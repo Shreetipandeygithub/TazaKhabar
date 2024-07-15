@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/news_nav_graph"
+    app:startDestination="@id/articleFragment">
+
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.tazakhabar.ui.fragment.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article">
+        <argument
+            android:name="article"
+            app:argType="com.example.tazakhabar.model.Article"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.example.tazakhabar.ui.fragment.FavouriteFragment"
+        android:label="fragment_favourite"
+        tools:layout="@layout/fragment_favourite" >
+        <action
+            android:id="@+id/action_favouriteFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/headlineFragment"
+        android:name="com.example.tazakhabar.ui.fragment.HeadlineFragment"
+        android:label="fragment_headline"
+        tools:layout="@layout/fragment_headline" >
+        <action
+            android:id="@+id/action_headlineFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment2"
+        android:name="com.example.tazakhabar.ui.fragment.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment2_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+</navigation>

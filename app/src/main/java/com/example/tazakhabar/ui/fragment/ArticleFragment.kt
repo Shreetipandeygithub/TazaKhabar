@@ -28,6 +28,8 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
 
         newsViewModel=(activity as NewsActivity).newsViewModel
         val article=args.article
+
+        println("There is some error in this article initialization")
         binding.webView.apply {
             webViewClient= WebViewClient()
             article.url?.let {
